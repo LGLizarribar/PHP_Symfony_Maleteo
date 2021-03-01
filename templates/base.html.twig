@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Catamaran:400,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
-
+{% block body %}
 <body>
 <div class="wrapper">
     <div class="container-fluid">
@@ -126,7 +126,7 @@
                     </div>
                     <div class="col-md-5 col-md-offset-1">
                         <div class="the-form">
-                            <form action="">
+                            <form action="/newdemo" method="post">
                                 <p class="the-form__title heading3">
                                     Solicita una demo
                                 </p>
@@ -136,16 +136,18 @@
                                         Nombre
                                     </label>
                                     <input type="text"
+                                           name="name"
                                            id="name"
                                            class="the-form__input"
                                            placeholder="Vincent Chase">
                                 </div>
 
                                 <div class="the-form__group">
-                                    <label for="name">
+                                    <label for="email">
                                         Email
                                     </label>
                                     <input type="email"
+                                           name="email"
                                            id="name"
                                            class="the-form__input"
                                            placeholder="vincent@mga.com">
@@ -155,24 +157,24 @@
                                     <label for="city">
                                         Ciudad
                                     </label>
-                                    <select name=""
+                                    <select name="city"
                                             id="city"
                                             class="the-form__input the-form__select">
-                                        <option value="">Madrid</option>
-                                        <option value="">Puerto Hurraco</option>
-                                        <option value="">Villabolluyos</option>
+                                        <option value="Madrid">Madrid</option>
+                                        <option value="Puerto Hurraco">Puerto Hurraco</option>
+                                        <option value="Villabolluyos">Villabolluyos</option>
                                     </select>
                                 </div>
-
                                 <div class="the-form__group the-form__group_checkbox">
                                     <input type="checkbox"
+                                           name="policyAccept"
                                            id="privacity">
                                     <label for="privacity">
                                         Aceptas la <a href="#">política de privacidad</a>
                                     </label>
                                 </div>
 
-                                <input type="button"
+                                <input type="submit"
                                        class="the-form__btn btn btn-lg btn-primary"
                                        value="Enviar">
                             </form>
@@ -243,7 +245,7 @@
         </div>
     </div>
 </footer>
+{% endblock %}
 </body>
-
 </html>
 
