@@ -126,7 +126,7 @@
                     </div>
                     <div class="col-md-5 col-md-offset-1">
                         <div class="the-form">
-                            <form action="/newdemo" method="post">
+                            <form action="/newdemo" method="post" name="demoForm">
                                 <p class="the-form__title heading3">
                                     Solicita una demo
                                 </p>
@@ -139,7 +139,8 @@
                                            name="name"
                                            id="name"
                                            class="the-form__input"
-                                           placeholder="Vincent Chase">
+                                           placeholder="Vincent Chase"
+                                           required>
                                 </div>
 
                                 <div class="the-form__group">
@@ -150,7 +151,8 @@
                                            name="email"
                                            id="name"
                                            class="the-form__input"
-                                           placeholder="vincent@mga.com">
+                                           placeholder="vincent@mga.com"
+                                           required>
                                 </div>
 
                                 <div class="the-form__group">
@@ -159,7 +161,8 @@
                                     </label>
                                     <select name="city"
                                             id="city"
-                                            class="the-form__input the-form__select">
+                                            class="the-form__input the-form__select"
+                                            required>
                                         <option value="Madrid">Madrid</option>
                                         <option value="Puerto Hurraco">Puerto Hurraco</option>
                                         <option value="Villabolluyos">Villabolluyos</option>
@@ -168,7 +171,8 @@
                                 <div class="the-form__group the-form__group_checkbox">
                                     <input type="checkbox"
                                            name="policyAccept"
-                                           id="privacity">
+                                           id="privacity"
+                                           required>
                                     <label for="privacity">
                                         Aceptas la <a href="#">política de privacidad</a>
                                     </label>

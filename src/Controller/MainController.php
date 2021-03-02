@@ -30,8 +30,9 @@ class MainController extends AbstractController
         $name = $request->request->get('name');
         $email = $request->request->get('email');
         $policyAccept = $request->request->getBoolean('policyAccept');
-        $city = $_POST['city'];
+        $city = $request->request->get('city');
 
+        echo "You have selected :" .$city;
         dd($name, $email, $city, $policyAccept);
 
         $demoUser = new DemoUser();
