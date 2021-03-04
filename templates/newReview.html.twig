@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Danos tu opinión sobre Maleteo!</h2>
+    <form name="opinionForm" method="post">
+        <div id="opinionForm">
+            <div>
+                <label for="opinionForm_name" class="required">Nombre</label>
+                <input type="text" id="opinionForm_name" name="opinionForm[name]" required="required">
+            </div>
+            <div>
+                <label for="opinionForm_city" class="required">Ciudad</label>
+                <input type="text" id="opinionForm_city" name="opinionForm[city]" required="required">
+            </div>
+            <div>
+                <label for="opinionForm_review" class="required">Tu opinión</label>
+                <input type="text" id="opinionForm_review" name="opinionForm[review]" required="required">
+            </div>
+            <button type="submit">Enviar</button>
+{% endblock %}

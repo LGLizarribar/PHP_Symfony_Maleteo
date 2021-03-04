@@ -192,45 +192,21 @@
                     Opiniones de otros guardianes
                 </h2>
                 <ul class="row">
+                    {% for userReview in userReviews %}
                     <li class="col-md-4">
                         <div class="opinion">
                             <blockquote class="opinion__blq simple-bubble text-large">
-                                Tras el enorme éxito internacional de su primera colaboración, “Bailar”, que ganó un galardón en los Premios
+                                {{ userReview.review }}
                             </blockquote>
                             <p class="opinion__author text-large">
-                                Sergio Garnacho
+                                {{ userReview.name }}
                             </p>
                             <p class="opinion__author-address">
-                                Tetuán, Madrid
+                                {{ userReview.city }}
                             </p>
                         </div>
                     </li>
-                    <li class="col-md-4">
-                        <div class="opinion">
-                            <blockquote class="opinion__blq simple-bubble text-large">
-                                Tras el enorme éxito internacional de su primera colaboración, “Bailar”, que ganó un galardón en los Premios
-                            </blockquote>
-                            <p class="opinion__author text-large">
-                                Sergio Garnacho
-                            </p>
-                            <p class="opinion__author-address">
-                                Tetuán, Madrid
-                            </p>
-                        </div>
-                    </li>
-                    <li class="col-md-4">
-                        <div class="opinion">
-                            <blockquote class="opinion__blq simple-bubble text-large">
-                                Tras el enorme éxito internacional de su primera colaboración, “Bailar”, que ganó un galardón en los Premios
-                            </blockquote>
-                            <p class="opinion__author text-large">
-                                Sergio Garnacho
-                            </p>
-                            <p class="opinion__author-address">
-                                Tetuán, Madrid
-                            </p>
-                        </div>
-                    </li>
+                    {% endfor %}
                 </ul>
             </section>
         </div>

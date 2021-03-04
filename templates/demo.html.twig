@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Listado de Usuarios que han solicitado demo </h2>
+    <ul class="row">
+        {% for demoUserRequest in demoUserRequests %}
+            <li class="col-md-4">
+                <div class="opinion">
+                    <blockquote class="opinion__blq simple-bubble text-large">
+                        {{ demoUserRequest.name }}
+                    </blockquote>
+                    <p class="opinion__author text-large">
+                        {{ demoUserRequest.email }}
+                    </p>
+                    <p class="opinion__author-address">
+                        {{ demoUserRequest.city }}
+                    </p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
