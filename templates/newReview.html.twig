@@ -1,12 +1,16 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h2>Danos tu opinión sobre Maleteo!</h2>
-    <div>
-        {{ form_start(opinionForm) }}
-        {{ form_row(opinionForm.name) }}
-        {{ form_row(opinionForm.city) }}
-        {{ form_row(opinionForm.review) }}
-        <button type="submit">Enviar</button>
-        {{ form_end(opinionForm) }}
+    <div class="col-md-5 col-md-offset-1">
+        <div class="the-form">
+            <p class="the-form__title heading3">Danos tu opinión sobre Maleteo!</p>
+                <div class="the-form__group">
+                {{ form_start(opinionForm) }}
+                {{ form_row(opinionForm.name) }}
+                {{ form_row(opinionForm.city) }}
+                {{ form_row(opinionForm.review) }}
+                <input type="submit" class="the-form__btn btn btn-lg btn-primary" value="Enviar">
+                {{ form_end(opinionForm) }}
+            </div>
+        </div>
     </div>
 {% endblock %}

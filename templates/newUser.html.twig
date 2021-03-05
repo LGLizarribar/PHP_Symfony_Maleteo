@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h2>Por favor, introduce tus datos de registro</h2>
-    <div>
-        {{ form_start(newUserForm) }}
-        {{ form_row(newUserForm.name) }}
-        {{ form_row(newUserForm.surname) }}
-        {{ form_row(newUserForm.email) }}
-        {{ form_row(newUserForm.password) }}
-        <button type="submit">Enviar</button>
-        {{ form_end(newUserForm) }}
+    <div class="col-md-5 col-md-offset-1">
+        <div class="the-form">
+            <p class="the-form__title heading3">Por favor, introduce tus datos de registro</p>
+                <div class="the-form__group">
+                    {{ form_start(newUserForm) }}
+                    {{ form_row(newUserForm.name) }}
+                    {{ form_row(newUserForm.surname) }}
+                    {{ form_row(newUserForm.email) }}
+                    {{ form_row(newUserForm.password) }}
+                    <input type="submit" class="the-form__btn btn btn-lg btn-primary" value="Enviar">
+                    {{ form_end(newUserForm) }}
+                </div>
+        </div>
     </div>
 {% endblock %}

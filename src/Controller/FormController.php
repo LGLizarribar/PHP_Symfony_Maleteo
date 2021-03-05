@@ -47,6 +47,11 @@ class FormController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $newUser = $form->getData();
+
+            $userPassword = $newUser->getPassword();
+            $newPassword = password_hash($userPassword, PASSWORD_DEFAULT);
+            $newUser->setPassword($newPassword);
+
             $doctrine->persist($newUser);
             $doctrine->flush();
 
