@@ -4,27 +4,27 @@
 namespace App\Form;
 
 
-use App\Entity\UserReviews;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class NewReviewForm extends AbstractType
+class NewUserForm extends AbstractType
 {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name');
-        $builder->add('city');
-        $builder->add('review');
+        $builder->add('surname');
+        $builder->add('email');
+        $builder->add('password');
 
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => UserReviews::class,
+            'data_class' => User::class,
         ]);
     }
 

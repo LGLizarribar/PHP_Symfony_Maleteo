@@ -12,10 +12,27 @@
 </head>
 {% block body %}
 <body>
+{% for message in app.flashes('success') %}
+    <p>{{ message }}</p>
+{% endfor %}
 <div class="wrapper">
     <div class="container-fluid">
         <header class="header">
-            <img src="assets/img/logo.svg" alt="Maleteo">
+            <span>
+                <img src="assets/img/logo.svg" alt="Maleteo">
+            </span>
+            {% if is_granted('ROLE_USER') %}
+            <span>
+                <a class="the-form__btn btn btn-lg btn-primary" href="{{ path('app_logout') }}">Log Out</a>
+            </span>
+            {% else %}
+                <span>
+                <a class="the-form__btn btn btn-lg btn-primary" href="{{ path('app_login') }}">Log In</a>
+            </span>
+                <span>
+                <a class="the-form__btn btn btn-lg btn-primary" href="{{ path('app_registry') }}">Log On</a>
+            </span>
+            {% endif %}
         </header>
     </div>
 </div>
@@ -126,7 +143,7 @@
                     </div>
                     <div class="col-md-5 col-md-offset-1">
                         <div class="the-form">
-                            <form action="/newdemo" method="post" name="demoForm">
+                            <form action="{{ path('new_demo_request') }}" method="post" name="demoForm">
                                 <p class="the-form__title heading3">
                                     Solicita una demo
                                 </p>
@@ -191,6 +208,10 @@
                 <h2 class="opinions__title heading2">
                     Opiniones de otros guardianes
                 </h2>
+                <div class="opinions__button-container row col-md-12">
+                    <a class="btn btn-lg btn-primary" href={{ path('reviews') }}>Danos tu opinión</a>
+                </div>
+                <div>
                 <ul class="row">
                     {% for userReview in userReviews %}
                     <li class="col-md-4">
@@ -208,6 +229,7 @@
                     </li>
                     {% endfor %}
                 </ul>
+                </div>
             </section>
         </div>
     </div>

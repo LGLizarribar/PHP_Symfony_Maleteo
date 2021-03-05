@@ -6,9 +6,9 @@ namespace App\Controller;
 use App\Entity\UserReviews;
 use App\Form\NewReviewForm;
 use App\Entity\DemoUser;
-use ContainerAJTERlb\getNewReviewFormService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -17,6 +17,15 @@ class MainController extends AbstractController
 {
     /**
      * @Route("/")
+     */
+    public function redirectToLogin()
+    {
+        return $this->redirectToRoute('app_login');
+
+    }
+
+    /**
+     * @Route("/maleteo", name="maleteo_homepage")
      */
     public function index(EntityManagerInterface $doctrine)
     {
@@ -29,7 +38,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/newdemo")
+     * @Route("/maleteo/newDemoRequest", name="new_demo_request")
      */
 
     public function newDemo(Request $request, EntityManagerInterface $doctrine){
@@ -49,7 +58,7 @@ class MainController extends AbstractController
 
         $doctrine->flush();
 
-        return $this->render('base.html.twig');
+        return $this->redirectToRoute('maleteo_homepage');
     }
 
     /**
@@ -64,35 +73,6 @@ class MainController extends AbstractController
 
     }
 
-    /**
-     * @Route("/maleteo/opiniones")
-     */
-    public function newOpinion(Request $request){
 
-        $form = $this->createForm(NewReviewForm::class);
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()){
-            $data = $form->getData();
-            $review = new UserReviews();
-            $review->setName('name');
-            $review->setCity('city');
-            $review->setReview('review');
-
-
-            $doctrine->persist($review);
-
-            $doctrine->flush();
-
-            return $this->render('base.html.twig');
-        }
-
-        return $this->render(
-            'newReview.html.twig',
-            ['opinionForm' => $form->createView()]
-        );
-
-    }
 
 }

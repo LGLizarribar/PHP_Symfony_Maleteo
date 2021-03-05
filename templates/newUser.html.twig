@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Por favor, introduce tus datos de registro</h2>
+    <div>
+        {{ form_start(newUserForm) }}
+        {{ form_row(newUserForm.name) }}
+        {{ form_row(newUserForm.surname) }}
+        {{ form_row(newUserForm.email) }}
+        {{ form_row(newUserForm.password) }}
+        <button type="submit">Enviar</button>
+        {{ form_end(newUserForm) }}
+    </div>
+{% endblock %}
