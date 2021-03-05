@@ -199,6 +199,9 @@
                                        class="the-form__btn btn btn-lg btn-primary"
                                        value="Enviar">
                             </form>
+                            <div class="opinions__button-container row col-md-12">
+                                 <a class="btn btn-lg btn-primary" href={{ path('demo_requests_list') }}>Mira quién ha solicitado una demo</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,8 +211,10 @@
                 <h2 class="opinions__title heading2">
                     Opiniones de otros guardianes
                 </h2>
-                <div class="opinions__button-container row col-md-12">
-                    <a class="btn btn-lg btn-primary" href={{ path('reviews') }}>Danos tu opinión</a>
+                <div>
+                    <span class="opinions__button-container row col-md-12">
+                        <a class="btn btn-lg btn-primary" href={{ path('reviews') }}>Danos tu opinión</a>
+                    </span>
                 </div>
                 <div>
                 <ul class="row">

@@ -62,7 +62,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/maleteo/solicitudes")
+     * @Route("/maleteo/solicitudes", name="demo_requests_list")
      */
     public function showDemoRequests(EntityManagerInterface $doctrine){
         $repo = $doctrine->getRepository(DemoUser::class);
