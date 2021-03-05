@@ -20,7 +20,7 @@ class MainController extends AbstractController
      */
     public function redirectToLogin()
     {
-        return $this->redirectToRoute('app_login');
+        return $this->redirectToRoute('maleteo_homepage');
 
     }
 

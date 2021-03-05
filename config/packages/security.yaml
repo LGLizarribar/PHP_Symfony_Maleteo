@@ -40,4 +40,4 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
          - { path: ^/maleteo/solicitudes, roles: ROLE_ADMIN }
-         # - { path: ^/maleteo, roles: ROLE_USER }
+         - { path: ^/maleteo/opiniones, roles: ROLE_USER }
